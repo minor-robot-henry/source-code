@@ -18,9 +18,7 @@ float operatorZ = 0;
 usStruct usData;
 personCoordinates xyzStruct;
 
-
 enum caseStates {Init, Idle, Follow, Obstacle};
-
 
 ///proto's
 bool isErrorUSDetected(struct usStruct usFunctionData);
@@ -55,7 +53,6 @@ int main(int argc,char **argv)
         }
         else
         {
-
             switch(currentState)
             {
                 // Case 1: Init (currently obsolete)
@@ -86,15 +83,12 @@ int main(int argc,char **argv)
                         pioneer.resetDrive();
                     }
                 break;
-
             }
         }  
         ros::spinOnce();
     }
- 
     return 0;
 }
-
 
 bool isUSObjectDetected(usStruct usFunctionData)
 {
@@ -112,6 +106,4 @@ bool isErrorUSDetected(usStruct usFunctionData)
         return true;
     }
     else return false;
-
-    
 }
